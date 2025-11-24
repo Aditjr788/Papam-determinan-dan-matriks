@@ -1,2 +1,2 @@
-# Papam-determinan-dan-matriks
+# Papan-determinan-dan-matriks
 Pandemiks adalah sebuah web yang berisi konten kalkulator determinan dan matriks
