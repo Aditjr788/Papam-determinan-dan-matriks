@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PANDEMIKS - Kalkulator Matriks</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">Pandemiks</h1>
+      <p>Papan Determinan dan Matriks</p>
+    </header>
+
+    <div class="container">
+      <div class="row-container">
+        <section class="calc-section half-width">
+          <h2>Determinan 2x2</h2>
+          <div class="matrix-input-group">
+            <div class="matrix matrix-2x2">
+              <input type="number" value="4" id="det2x2_a11" />
+              <input type="number" value="3" id="det2x2_a12" />
+              <input type="number" value="2" id="det2x2_a21" />
+              <input type="number" value="1" id="det2x2_a22" />
+            </div>
+            <button onclick="calculateDet2x2()">Hitung Det</button>
+          </div>
+          <div class="result-box yellow-bg" id="result-det2x2">?</div>
+        </section>
+
+        <section class="calc-section half-width">
+          <h2>Invers 2x2</h2>
+          <div class="matrix-input-group">
+            <div class="matrix matrix-2x2">
+              <input type="number" value="4" id="inv2x2_a11" />
+              <input type="number" value="3" id="inv2x2_a12" />
+              <input type="number" value="2" id="inv2x2_a21" />
+              <input type="number" value="1" id="inv2x2_a22" />
+            </div>
+            <button onclick="calculateInv2x2()">Hitung Invers</button>
+          </div>
+          <div
+            class="matrix result-matrix matrix-2x2 final-inverse"
+            id="result-inv2x2"
+          >
+            <span class="cell">?</span>
+            <span class="cell">?</span>
+            <span class="cell">?</span>
+            <span class="cell">?</span>
+          </div>
+        </section>
+      </div>
+
+      <hr />
+
+      <section class="calc-section full-width">
+        <h2>Determinan 3x3</h2>
+        <div class="matrix-input-group">
+          <div class="matrix matrix-3x3">
+            <input type="number" value="1" id="det3x3_a11" />
+            <input type="number" value="2" id="det3x3_a12" />
+            <input type="number" value="3" id="det3x3_a13" />
+            <input type="number" value="0" id="det3x3_a21" />
+            <input type="number" value="1" id="det3x3_a22" />
+            <input type="number" value="4" id="det3x3_a23" />
+            <input type="number" value="5" id="det3x3_a31" />
+            <input type="number" value="6" id="det3x3_a32" />
+            <input type="number" value="0" id="det3x3_a33" />
+          </div>
+          <button onclick="calculateDet3x3()">Hitung Det</button>
+        </div>
+        <div class="result-box yellow-bg" id="result-det3x3">?</div>
+      </section>
+
+      <hr />
+
+      <section class="calc-section full-width">
+        <h2>Invers 3x3</h2>
+        <div class="matrix-input-group">
+          <div class="matrix matrix-3x3 input-matrix-3x3">
+            <input type="number" value="1" id="inv3x3_a11" />
+            <input type="number" value="2" id="inv3x3_a12" />
+            <input type="number" value="3" id="inv3x3_a13" />
+            <input type="number" value="0" id="inv3x3_a21" />
+            <input type="number" value="1" id="inv3x3_a22" />
+            <input type="number" value="4" id="inv3x3_a23" />
+            <input type="number" value="5" id="inv3x3_a31" />
+            <input type="number" value="6" id="inv3x3_a32" />
+            <input type="number" value="0" id="inv3x3_a33" />
+          </div>
+          <button onclick="calculateInv3x3()">Hitung Invers</button>
+        </div>
+
+        <div class="invers-3x3-display">
+          <span class="fraction">
+            1 / <span id="inv3x3_det" class="orange-bg det-box">DET</span>
+          </span>
+          <span class="times-symbol">×</span>
+          <div class="matrix result-matrix matrix-3x3" id="result-inv3x3-adj">
+            <span class="cell">?</span><span class="cell">?</span
+            ><span class="cell">?</span> <span class="cell">?</span
+            ><span class="cell">?</span><span class="cell">?</span>
+            <span class="cell">?</span><span class="cell">?</span
+            ><span class="cell">?</span>
+          </div>
+        </div>
+
+        <p style="margin-top: 20px">=</p>
+
+        <div
+          class="matrix result-matrix matrix-3x3 final-inverse"
+          id="result-inv3x3-final"
+        >
+          <span class="cell">?</span><span class="cell">?</span
+          ><span class="cell">?</span> <span class="cell">?</span
+          ><span class="cell">?</span><span class="cell">?</span>
+          <span class="cell">?</span><span class="cell">?</span
+          ><span class="cell">?</span>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

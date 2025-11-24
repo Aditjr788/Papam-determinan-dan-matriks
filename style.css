@@ -1,0 +1,224 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+.title {
+  font-family: cursive;
+  font-size: 3em;
+  color: #ff69b4; /* Pink terang */
+  margin: 0;
+}
+
+p {
+  margin: 5px 0 0;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #333;
+  margin: 40px 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.row-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.calc-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.half-width {
+  flex: 1;
+}
+
+.full-width {
+  width: 100%;
+}
+
+h2 {
+  color: #ffd700; /* Kuning emas */
+  margin-top: 0;
+}
+
+/* --- Matriks Styling --- */
+.matrix-input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.matrix {
+  display: grid;
+  padding: 10px;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Kurung siku/bracket visual */
+.matrix::before,
+.matrix::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  border: 3px solid #ccc;
+}
+.matrix::before {
+  left: 0;
+  border-right: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.matrix::after {
+  right: 0;
+  border-left: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Layouts */
+.matrix-2x2 {
+  grid-template-columns: repeat(2, 50px);
+  grid-template-rows: repeat(2, 50px);
+}
+.matrix-3x3 {
+  grid-template-columns: repeat(3, 40px);
+  grid-template-rows: repeat(3, 40px);
+}
+
+/* Input Styles */
+.matrix input,
+.result-matrix .cell {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border: none;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  border-radius: 5px;
+  box-sizing: border-box;
+  appearance: none;
+}
+
+.matrix-3x3 input {
+  width: 30px;
+  height: 30px;
+  font-size: 0.9em;
+}
+
+.result-matrix .cell {
+  background-color: #3e3e3e;
+  line-height: 40px;
+}
+
+/* 3x3 Result Cell Adjustment */
+.result-matrix.matrix-3x3 .cell {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 0.8em;
+}
+
+/* Result Box for Determinants */
+.result-box {
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px auto;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.yellow-bg {
+  background-color: #ffd700;
+  color: #000;
+}
+.orange-bg {
+  background-color: #ff9800;
+  color: #000;
+}
+
+/* Button Styling */
+button {
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ffc0cb;
+}
+
+/* --- Tampilan Invers 3x3 (1/det * adj) --- */
+.invers-3x3-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+  font-size: 1.2em;
+}
+
+.fraction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.fraction span {
+  display: block;
+  margin: 2px 0;
+}
+.fraction span:first-child {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 2px;
+}
+
+.det-box {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+}
+.times-symbol {
+  font-size: 2em;
+  color: #ffd700;
+}
+.final-inverse {
+  border-color: #ff69b4 !important;
+}
